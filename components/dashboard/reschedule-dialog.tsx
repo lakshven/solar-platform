@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 // components/dashboard/reschedule-dialog.tsx
 
 import { useState } from "react";
@@ -47,7 +45,7 @@ export function RescheduleDialog({
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`${API_URL}/api/maintenance/reschedule`, {
+      const res = await fetch("/api/maintenance/reschedule", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ subscriptionId, newDate: date, newTime: time }),

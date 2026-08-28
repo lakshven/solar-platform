@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
@@ -60,7 +58,7 @@ export default function ConfirmPage() {
         }
 
         const response = await fetch(
-          `${API_URL}/api/auth/confirm`,
+          "/api/auth/confirm",
           {
             method: "POST",
             headers: {

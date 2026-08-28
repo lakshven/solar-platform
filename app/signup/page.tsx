@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 import { Suspense } from "react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -143,7 +141,7 @@ function SignupPageContent() {
        * from the HTTP-only cookie.
        */
       const response = await fetch(
-        `${API_URL}/api/auth/signup`,
+        "/api/auth/signup",
         {
           method: "POST",
 

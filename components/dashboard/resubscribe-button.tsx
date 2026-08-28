@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 // components/dashboard/resubscribe-button.tsx
 
 import { useState } from "react";
@@ -19,7 +17,7 @@ export function ResubscribeButton() {
     setError(null);
 
     try {
-      const res = await fetch(`${API_URL}/api/maintenance/resubscribe`, { method: "POST" });
+      const res = await fetch("/api/maintenance/resubscribe", { method: "POST" });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Could not resubscribe.");
       router.refresh();

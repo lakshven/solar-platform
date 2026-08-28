@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 import { useCallback, useEffect, useState } from "react";
 import {
   CheckCircle2,
@@ -133,7 +131,7 @@ export default function MyReferralsPage() {
     setError(null);
 
     try {
-      const response = await fetch(`${API_URL}/api/referral/mine`, {
+      const response = await fetch("/api/referral/mine", {
         method: "GET",
         credentials: "include",
         cache: "no-store",
@@ -168,7 +166,7 @@ export default function MyReferralsPage() {
     setError(null);
 
     try {
-      const response = await fetch(`${API_URL}/api/referral`, { method: "POST" });
+      const response = await fetch("/api/referral", { method: "POST" });
       const result = await response.json();
 
       if (!response.ok) {

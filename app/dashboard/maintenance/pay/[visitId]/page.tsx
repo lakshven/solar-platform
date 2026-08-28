@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 // app/dashboard/maintenance/pay/[visitId]/page.tsx
 
 import { useState } from "react";
@@ -57,7 +55,7 @@ export default function PayServiceVisitPage() {
     setError(null);
 
     try {
-      const response = await fetch(`${API_URL}/api/maintenance/pay`, {
+      const response = await fetch("/api/maintenance/pay", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ serviceVisitId: params.visitId }),

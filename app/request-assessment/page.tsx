@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -234,7 +232,7 @@ export default function RequestAssessmentPage() {
     };
 
     try {
-      const response = await fetch(`${API_URL}/api/lead`, {
+      const response = await fetch("/api/lead", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { ArrowLeft, ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
@@ -88,7 +86,7 @@ export function Calculator() {
     }, 900);
 
     try {
-      const res = await fetch(`${API_URL}/api/calculate-savings`, {
+      const res = await fetch("/api/calculate-savings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(input),
@@ -111,7 +109,7 @@ export function Calculator() {
     setError(null);
 
     try {
-      const response = await fetch(`${API_URL}/api/leads`, {
+      const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

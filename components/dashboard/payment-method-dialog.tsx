@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 // components/dashboard/payment-method-dialog.tsx
 
 import { useState } from "react";
@@ -35,7 +33,7 @@ export function PaymentMethodDialog({ hasCard }: { hasCard: boolean }) {
     setError(null);
 
     try {
-      const res = await fetch(`${API_URL}/api/maintenance/payment-method`, {
+      const res = await fetch("/api/maintenance/payment-method", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cardNumber, expiry, cvv }),

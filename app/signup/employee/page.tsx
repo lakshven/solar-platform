@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
@@ -81,7 +79,7 @@ export default function EmployeeSignupPage() {
     setLoading(true);
 
     try {
-      const response = await fetch(`${API_URL}/api/auth/signup/employee`, {
+      const response = await fetch("/api/auth/signup/employee", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

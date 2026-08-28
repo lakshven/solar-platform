@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 // components/dashboard/change-frequency-dialog.tsx
 
 import { useState } from "react";
@@ -40,7 +38,7 @@ export function ChangeFrequencyDialog({
     setError(null);
 
     try {
-      const res = await fetch(`${API_URL}/api/maintenance/frequency`, {
+      const res = await fetch("/api/maintenance/frequency", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ frequency }),

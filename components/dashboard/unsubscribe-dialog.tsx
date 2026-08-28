@@ -1,7 +1,5 @@
 "use client";
 
-import { API_URL } from "@/lib/api-url";
-
 // components/dashboard/unsubscribe-dialog.tsx
 
 import { useState } from "react";
@@ -29,7 +27,7 @@ export function UnsubscribeDialog() {
     setError(null);
 
     try {
-      const res = await fetch(`${API_URL}/api/maintenance/unsubscribe`, { method: "POST" });
+      const res = await fetch("/api/maintenance/unsubscribe", { method: "POST" });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Could not cancel your plan.");
       setOpen(false);
